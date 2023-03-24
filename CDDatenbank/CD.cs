@@ -24,7 +24,7 @@
             }
             catch (Exception e)
             {
-                throw new CDException($"Cannot parse string {csv}");             
+                throw new CDException($"Cannot parse string {csv}");
             }
         }
 
@@ -38,15 +38,16 @@
             return (cmp != 0) ? cmp : Title.CompareTo(other.Title);
         }
 
-        /// <summary>
-        /// Build a semicolon separated CSV-Style representation of the CD object
-        /// </summary>
-        /// <returns>String representation of the CD object.</returns>
+
         public override string ToString()
         {
             return $"{Interpreter}:\t{Title}\t({RunTime})";
         }
 
+        /// <summary>
+        /// Build a semicolon separated CSV-Style representation of the CD object
+        /// </summary>
+        /// <returns>String representation of the CD object.</returns>
         public string ToCSV()
         {
             return $"{Interpreter};{Title};{RunTime}";
